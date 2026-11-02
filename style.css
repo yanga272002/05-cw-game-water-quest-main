@@ -1,0 +1,497 @@
+/* ==========================================================================
+   charity: water Brand Colors & Typography
+   (Source: charity: water Brand Usage Guide - Feb 2020)
+   ========================================================================== */
+
+:root {
+  /* Core Brand Colors (Brand Usage Guide, Page 3) */
+  --cw-yellow: #FFC907;       /* Pantone 108 U - Signature Jerry Can Yellow */
+  --cw-navy: #003366;         /* Primary Dark Blue / Navy */
+  --cw-soft-blue: #77A8BB;    /* Soft Slate Blue */
+  --cw-warm-cream: #FFF7E1;   /* Warm Cream Background Accent */
+  --cw-black: #1A1A1A;        /* Pantone Black 6 U */
+  --cw-peach: #FED8C1;        /* 50% Peach Tint */
+  --cw-terracotta: #BF6C46;   /* Rich Terracotta / Rust */
+  --cw-light-gray: #CBCCD1;   /* Soft Light Gray Border Tone */
+
+  /* Secondary & Status Colors */
+  --cw-dark-green: #159A48;   /* Success / Victory Dark Green */
+  --cw-green: #4FCB53;        /* Vibrant Green */
+  --cw-blue: #2E9DF7;         /* Bright Blue */
+  --cw-red: #F5402C;          /* Warning / Alert Red */
+
+  /* Typography */
+  --cw-font-family: 'Proxima Nova', Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--cw-font-family);
+  margin: 0;
+  padding: 30px 20px;
+  background-color: var(--cw-warm-cream);
+  color: var(--cw-black);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 51, 102, 0.08);
+  border: 1px solid var(--cw-light-gray);
+}
+
+/* charity: water Logo Lockup */
+.logo-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cw-logo,
+h1 img {
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: var(--cw-navy);
+  letter-spacing: -0.5px;
+}
+
+.game-instructions {
+  font-size: 17px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: var(--cw-black);
+  font-weight: 500;
+}
+
+/* Difficulty Selector (Target Goal & Time Limit) */
+.difficulty-section {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.difficulty-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cw-navy);
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.diff-btn {
+  background-color: #FFFFFF;
+  color: var(--cw-navy);
+  border: 2px solid var(--cw-light-gray);
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: none;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.diff-btn:hover:not(:disabled):not(.active) {
+  border-color: var(--cw-soft-blue);
+  background-color: var(--cw-warm-cream);
+  transform: translateY(-1px);
+}
+
+.diff-btn.active {
+  background-color: var(--cw-navy);
+  color: #FFFFFF;
+  border-color: var(--cw-navy);
+  box-shadow: 0 3px 8px rgba(0, 51, 102, 0.2);
+}
+
+.diff-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Stats: Score and Countdown Timer */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: var(--cw-warm-cream);
+  border: 2px solid var(--cw-yellow);
+  padding: 14px 20px;
+  border-radius: 12px;
+}
+
+.stats p {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cw-navy);
+}
+
+.stats span {
+  display: inline-block;
+  background-color: #FFFFFF;
+  color: var(--cw-navy);
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--cw-light-gray);
+  margin-left: 4px;
+}
+
+/* Achievement, Milestone & End-Game Messages */
+.achievement {
+  min-height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.achievement.milestone {
+  background-color: var(--cw-warm-cream);
+  color: var(--cw-navy);
+  border: 2px solid var(--cw-yellow);
+  padding: 12px 18px;
+  box-shadow: 0 4px 12px rgba(255, 201, 7, 0.3);
+  animation: popIn 0.35s cubic-bezier(0.17, 0.67, 0.34, 1.8);
+}
+
+.achievement.win {
+  background-color: #EBF9F1;
+  color: var(--cw-dark-green);
+  border: 2px solid var(--cw-dark-green);
+  padding: 14px 18px;
+}
+
+.achievement.lose {
+  background-color: #FDF1EB;
+  color: var(--cw-terracotta);
+  border: 2px solid var(--cw-terracotta);
+  padding: 14px 18px;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 3x3 Game Grid */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 440px;
+}
+
+.grid-cell {
+  background-color: var(--cw-warm-cream);
+  border: 2px solid var(--cw-light-gray);
+  border-radius: 12px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-cell:hover {
+  border-color: var(--cw-soft-blue);
+}
+
+/* Water Can Item inside Grid Cell */
+.water-can-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78px;
+  height: 78px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.water-can {
+  width: 100%;
+  height: 100%;
+  background-image: url('img/water-can.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.25);
+  animation: popUp 0.4s cubic-bezier(0.17, 0.67, 0.34, 1.8);
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.water-can:hover {
+  transform: scale(1.08);
+}
+
+.water-can:active {
+  transform: scale(0.92);
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Start / Play Again Button */
+#start-game {
+  background-color: var(--cw-yellow);
+  color: var(--cw-black);
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 25px auto 0;
+  box-shadow: 0 4px 12px rgba(255, 201, 7, 0.4);
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+#start-game:hover:not(:disabled) {
+  background-color: #E5B400;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 201, 7, 0.5);
+}
+
+#start-game:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#start-game:disabled {
+  background-color: var(--cw-light-gray);
+  color: #777777;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Footer & Charity: Water Links */
+.game-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cw-light-gray);
+  text-align: center;
+}
+
+.footer-tagline {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cw-navy);
+  margin: 0 0 10px 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: var(--cw-navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--cw-soft-blue);
+  text-decoration: underline;
+}
+
+.footer-link.donate-link {
+  color: var(--cw-black);
+  background-color: var(--cw-yellow);
+  padding: 5px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(255, 201, 7, 0.35);
+  transition: all 0.2s ease;
+}
+
+.footer-link.donate-link:hover {
+  background-color: #E5B400;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.footer-separator {
+  color: var(--cw-light-gray);
+  font-size: 14px;
+}
+
+.footer-mission {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Design for Multiple Screen Sizes
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  .container {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .cw-logo,
+  h1 img {
+    max-width: 190px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .game-instructions {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .difficulty-buttons {
+    gap: 6px;
+  }
+
+  .diff-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .stats {
+    padding: 10px 14px;
+    margin-bottom: 16px;
+  }
+
+  .stats p {
+    font-size: 15px;
+  }
+
+  .stats span {
+    padding: 2px 6px;
+    font-size: 15px;
+  }
+
+  .game-grid {
+    gap: 10px;
+    max-width: 320px;
+  }
+
+  .water-can-wrapper {
+    width: 62px;
+    height: 62px;
+  }
+
+  #start-game {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .game-footer {
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-separator {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .difficulty-buttons {
+    flex-direction: column;
+  }
+
+  .diff-btn {
+    width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .game-grid {
+    max-width: 270px;
+    gap: 8px;
+  }
+
+  .water-can-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+}

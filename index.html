@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quest - charity: water</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container">
+    <!-- charity: water official logo -->
+    <div class="logo-container">
+      <img src="img/cw_logo_horizontal.png" alt="charity: water logo" class="cw-logo" />
+    </div>
+
+    <h1>Water Quest</h1>
+    <p class="game-instructions">Collect 20 items in 30s to complete the game!</p>
+
+    <!-- Difficulty Mode Selector (Target Goal & Time Limit) -->
+    <div class="difficulty-section">
+      <p class="difficulty-label">Select Difficulty:</p>
+      <div class="difficulty-buttons">
+        <button type="button" class="diff-btn" data-difficulty="easy">Easy (15 cans / 35s)</button>
+        <button type="button" class="diff-btn active" data-difficulty="medium">Medium (20 cans / 30s)</button>
+        <button type="button" class="diff-btn" data-difficulty="hard">Hard (22 cans / 25s)</button>
+      </div>
+    </div>
+
+    <!-- Game statistics: Score & Countdown Timer -->
+    <div class="stats">
+      <p>Cans Collected: <span id="current-cans">0</span></p>
+      <p>Time Left: <span id="timer">30</span>s</p>
+    </div>
+
+    <!-- Achievement / End-of-game message display -->
+    <div id="achievements" class="achievement"></div>
+
+    <!-- 3x3 Game grid where Jerry Cans appear -->
+    <div class="game-grid"></div>
+
+    <!-- Start / Play Again Button -->
+    <button id="start-game">Start Game</button>
+
+    <!-- Footer with charity: water links -->
+    <footer class="game-footer">
+      <p class="footer-tagline">Clean water changes everything.</p>
+      <div class="footer-links">
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          Visit charitywater.org
+        </a>
+        <span class="footer-separator">•</span>
+        <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer" class="footer-link donate-link">
+          Donate to Clean Water
+        </a>
+      </div>
+      <p class="footer-mission">100% of public donations directly fund sustainable water projects.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
